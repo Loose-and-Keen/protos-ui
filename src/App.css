@@ -1,38 +1,105 @@
+/* src/App.css (v0.2 - 最低限のチャットUI) */
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  max-width: 700px; /* モバイル最適化（横幅） */
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1a1a1a; /* 黒バック */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* --- タブUI --- */
+.tabs {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap; /* スマホで折り返す */
+  justify-content: center;
+}
+.tabs button {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tabs button.active { /* 選択中のタブ */
+  background: #007bff;
+  border-color: #007bff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --- プリセット質問ボタン --- */
+.preset-questions button {
+  background: #444;
+  color: #eee;
+  border: 1px solid #666;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.preset-questions button:hover {
+  background: #555;
+}
+
+/* --- チャット履歴 --- */
+.chat-container {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto; /* スクロールできるように */
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: left;
+  background: #282c34;
+}
+.chat-message p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+.chat-message.user p { /* ユーザーの発言 */
+  color: #a0e0ff;
+}
+.chat-message.assistant p { /* AIの発言 */
+  color: #ffffff;
+}
+
+/* --- チャット入力フォーム --- */
+.chat-form {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+}
+.chat-form input {
+  flex-grow: 1;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #555;
+  background: #333;
+  color: white;
+}
+.chat-form button {
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.chat-form button:disabled {
+  background: #555;
 }
