@@ -5,7 +5,7 @@ import axios from 'axios'; // 「電話機」
 import './App.css'; // デフォルトのCSS
 
 // 「頭脳（FastAPI）」の住所
-const API_BASE_URL = "https://protos-api.onrender.com"; 
+const API_BASE_URL = "https://protos-api-sgp.onrender.com"; 
 // const API_BASE_URL = "http://127.0.0.1:8888"; // ローカルテスト用
 
 // --- MVP用 ユーザーID/名前 (ハードコード) ---
